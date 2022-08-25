@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina inicial</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="form.css">
+
+</head>
+
+<body>
+    <!-- Cabecalho -->
+    <nav>
+        <div>
+            <img id="gitlogo" src="25231.png" alt="">
+            <a target="_blank" href="https://github.com/danpqdan" class="logo">DanSantos</a>
+        </div>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list" id="nav-list">
+            <li><a href="user">Acesse</a></li>
+            <li><a href="#home">Inicio</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    <!-- Home -->
+    <section id="home">
+        <main class="home">
+            <div class="container-home">
+                <p1 class="title-div">O projeto</p1>
+                <div class="img-home">
+                </div>
+                <div class="conteudo-home">
+                    <p>
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+
+                    </p>
+                </div>
+            </div>
+        </main>
+    </section>
+    <div class="space-transition"></div>
+
+    <!-- Sobre -->
+    <section id="sobre">
+        <main class="sobre">
+            <div class="container-sobre">
+                <p1 class="title-div">Sobre mim</p1>
+                <div class="img-sobre"></div>
+                <div class="conteudo-sobre">
+                    <p>ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                        ipsis litteris é uma expressão de origem latina que significa "pelas mesmas letras",
+                        "literalmente" ou "nas mesmas palavras". Utiliza-se para indicar que um texto foi transcrito
+                        fielmente. Wikipédia
+                    </p>
+                </div>
+            </div>
+        </main>
+    </section>
+    <div class="space-transition"></div>
+
+    <!-- Projeto -->
+    <section id="projetos">
+        <main class="projetos">
+            <div class="container-projetos">
+                <div class="projeto1"></div>
+                <div class="projeto2"></div>
+                <div class="projeto3"></div>
+                <div class="projeto4"></div>
+            </div>
+        </main>
+    </section>
+    <div class="space-transition"></div>
+
+    <!-- contato -->
+    <section id="contato">
+        <main class="contato">
+            <div class="container-contato">
+                <h1 class="title-div">Entre em Contato</h1>
+                <div class="container-form">
+                    <form th:action="@{/enviarEmail}" th:object="${enviandoEmail}" method="post" id="contact"
+                        class="form-contato">
+                        <fieldset>
+                            <input type="text" name="ownerRef" id="nome" class="area-mensagem" placeholder="Seu nome"
+                                tabindex="">
+                        </fieldset>
+
+                        <fieldset>
+                            <input type="email" name="emailTo" id="email" class="area-mensagem" placeholder="Seu email"
+                                tabindex="2" required>
+                        </fieldset>
+                        <fieldset>
+                            <input type="tel" id="telefone" class="area-mensagem"
+                                placeholder="Seu telefone(Opcional)" tabindex="3">
+                        </fieldset>
+                        <fieldset>
+                            <input type="url" id="site" class="area-mensagem"
+                                placeholder="Seu site(Opcional)" tabindex="4" norequired>
+                        </fieldset>
+                        <fieldset>
+                            <textarea placeholder="Sua dica e sujestão sera muito bem vinda!" name="text"
+                                id="areamensagem" class="area-mensagem" tabindex="5" required></textarea>
+                        </fieldset>
+
+                        <fieldset style="display: none;">
+                            <input type="email" name="emailFrom" id="email" class="area-mensagem" placeholder="Seu email"
+                                tabindex="2" contextmenu="danieltisantos@gmail.com">
+                        </fieldset>
+                        <fieldset style="display: none;">
+                            <textarea placeholder="Sua dica e sujestão sera muito bem vinda!" name="subject"
+                                id="areamensagem" class="area-mensagem" tabindex="5" contextmenu="Teste"></textarea>
+                        </fieldset>
+
+                        <button type="submit" id="contact-submit" data-submit="...Sending"
+                            tabindex="6">Cadastrar</button>
+                    </form>
+
+                </div>
+            </div>
+        </main>
+    </section>
+
+    <script src="mobile-navbar.js"></script>
+    <script src="nav-effects.js"></script>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
