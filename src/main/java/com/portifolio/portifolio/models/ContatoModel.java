@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.GenericGenerator;
+
 import com.portifolio.portifolio.enums.StatusEmailEnum;
 
 import lombok.Data;
@@ -19,7 +22,8 @@ import lombok.Data;
 public class ContatoModel implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "increment")
+    @GenericGenerator(name = "increment", strategy = "increment")
     Long id;
     private String ownerRef;
     private String emailFrom;
