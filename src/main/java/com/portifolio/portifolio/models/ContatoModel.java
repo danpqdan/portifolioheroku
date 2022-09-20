@@ -22,9 +22,15 @@ import lombok.Data;
 public class ContatoModel implements Serializable {
 
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    // @GeneratedValue(generator = "increment")
+    // @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
+
+    String tel;
+    String url;
+    String textCli;
+
     private String ownerRef;
     private String emailFrom;
     private String emailTo;

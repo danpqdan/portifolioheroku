@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina inicial</title>
+
+    <link rel="stylesheet" href="viewport.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="form.css">
@@ -124,26 +126,28 @@
                                 tabindex="2" required>
                         </fieldset>
                         <fieldset>
-                            <input type="tel" id="telefone" class="area-mensagem"
-                                placeholder="Seu telefone(Opcional)" tabindex="3">
+                            <input type="tel" id="telefone" class="area-mensagem" name="tel"
+                                placeholder="Seu telefone(Opcional)" tabindex="3" norequired>
                         </fieldset>
                         <fieldset>
-                            <input type="url" id="site" class="area-mensagem"
+                            <input type="url" id="site" class="area-mensagem" name="url"
                                 placeholder="Seu site(Opcional)" tabindex="4" norequired>
                         </fieldset>
                         <fieldset>
-                            <textarea placeholder="Sua dica e sujestão sera muito bem vinda!" name="text"
+                            <textarea placeholder="Sua dica e sujestão sera muito bem vinda!" name="textCli"
                                 id="areamensagem" class="area-mensagem" tabindex="5" required></textarea>
                         </fieldset>
+                        <!-- ///////////////////////// -->
+                        <fieldset id="meuEmail" style="display: none;">
+                            <input type="email" name="emailFrom" id="email" class="area-mensagem"
+                                placeholder="Seu email" tabindex="2" value="danieltisantos@gmail.com">
+                        </fieldset>
+                        <fieldset id="meuTexto" style="display: none;">
+                            <textarea placeholder="Sua dica e sujestão sera muito bem vinda!" name="text"
+                                id="areamensagem" class="area-mensagem" tabindex="5">Obrigado pelo contato</textarea>
+                        </fieldset>
 
-                        <fieldset style="display: none;">
-                            <input type="email" name="emailFrom" id="email" class="area-mensagem" placeholder="Seu email"
-                                tabindex="2" contextmenu="danieltisantos@gmail.com">
-                        </fieldset>
-                        <fieldset style="display: none;">
-                            <textarea placeholder="Sua dica e sujestão sera muito bem vinda!" name="subject"
-                                id="areamensagem" class="area-mensagem" tabindex="5" contextmenu="Teste"></textarea>
-                        </fieldset>
+                        <!-- ///////////////////////// -->
 
                         <button type="submit" id="contact-submit" data-submit="...Sending"
                             tabindex="6">Cadastrar</button>
