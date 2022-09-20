@@ -36,14 +36,10 @@ public class ContatoController {
         return mv;
     }
 
-    // @PostMapping("/enviarEmail")
-    // public ResponseEntity<ContatoModel> enviandoEmail(@RequestBody @Valid
-    // ContatoDTO contatoDTO) {
-    // ContatoModel contatoModel = new ContatoModel();
-    // BeanUtils.copyProperties(contatoDTO, contatoModel);
-    // sendEmailService.sendEmail(contatoModel);
-    // new ModelAndView("index");
-    // return new ResponseEntity<>(contatoModel, HttpStatus.CREATED);
-    // }
+    @PostMapping("/enviarEmail")
+    public ResponseEntity<ContatoModel> enviandoEmail(@RequestBody @Valid ContatoDTO contatoDTO) {
+        ContatoModel contatoModel = new ContatoModel();
+        return new ResponseEntity<>(contatoModel, HttpStatus.CREATED);
+    }
 
 }
