@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.portifolio.portifolio.DTOs.ContatoDTO;
 import com.portifolio.portifolio.models.ContatoModel;
+import com.portifolio.portifolio.repositories.ContatoRepository;
 import com.portifolio.portifolio.services.SendEmailService;
 
 @RestController
@@ -21,20 +22,28 @@ public class ContatoController {
     @Autowired
     SendEmailService sendEmailService;
 
-    // @PostMapping("/salvar")
-    // public ModelAndView salvarContato(ContatoModel contatoModel) {
-    // contatoRepository.save(contatoModel);
-    // ModelAndView mv = new ModelAndView("index");
-    // System.out.println("Contato Salvo");
-    // return mv;
-    // }
+    @Autowired
+    ContatoRepository contatoRepository;
 
     @PostMapping("/enviarEmail")
-    public ResponseEntity<ContatoModel> enviandoEmail(@RequestBody @Valid ContatoDTO contatoDTO) {
-        ContatoModel contatoModel = new ContatoModel();
-        BeanUtils.copyProperties(contatoDTO, contatoModel);
+    public ModelAndView salvarContato(ContatoModel contatoModel) {
+        contatoRepository.save(contatoModel);
+        ContatoDTO contatoDTO = new ContatoDTO();
+        BeanUtils.copyProperties(contatoModel, contatoDTO);
         sendEmailService.sendEmail(contatoModel);
-        return new ResponseEntity<>(contatoModel, HttpStatus.CREATED);
+        ModelAndView mv = new ModelAndView("index");
+        System.out.println("Contato Salvo");
+        return mv;
     }
+
+    // @PostMapping("/enviarEmail")
+    // public ResponseEntity<ContatoModel> enviandoEmail(@RequestBody @Valid
+    // ContatoDTO contatoDTO) {
+    // ContatoModel contatoModel = new ContatoModel();
+    // BeanUtils.copyProperties(contatoDTO, contatoModel);
+    // sendEmailService.sendEmail(contatoModel);
+    // new ModelAndView("index");
+    // return new ResponseEntity<>(contatoModel, HttpStatus.CREATED);
+    // }
 
 }
