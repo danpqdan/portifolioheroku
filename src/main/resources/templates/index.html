@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="projetos.css">
 
 
 
@@ -54,7 +55,8 @@
                 </div>
                 <div class="conteudo-home">
                     <h4>
-                        &nbsp &nbsp O projeto é uma criação para armazenamento e um homebase de outros projetos.</br></br>
+                        &nbsp O projeto é uma criação para armazenamento e um homebase de outros
+                        projetos.</br></br>
                         &nbsp O intuito é facilitar a navegação do usuario entre projetos ja desenvolvidos e em
                         desenvolvimento facilitando
                         para o usuario poder de forma facil e agil encontrar ferramentas para o seu dia a dia.
@@ -70,7 +72,6 @@
         <main class="sobre">
             <div class="container-sobre">
                 <p1 class="title-div">Sobre mim</p1>
-                <div class="img-sobre"></div>
                 <div class="conteudo-sobre">
                     <h4>
                         Meu nome é Daniel e atualmente tenho 25 anos, tenho contato com o mundo da computação desde os
@@ -100,11 +101,47 @@
     <section id="projetos">
         <main class="projetos">
             <div class="container-projetos">
-                <div class="projeto1"></div>
-                <div class="projeto2"></div>
-                <div class="projeto3"></div>
-                <div class="projeto4"></div>
+                <div class="slides">
+                    <div class="slider">
+                        <input type="radio" name="radio-btn" id="radio1">
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+                        <!-- Slide img -->
+                        <div class="slide first">
+                            <img src="/pexels-jonathan-cooper-13061612.jpg" alt="imagem 1">
+                        </div>
+                        <div class="slide">
+                            <img src="/pexels-agnese-lunecka-11858609.jpg" alt="imagem 2">
+                        </div>
+                        <div class="slide">
+                            <img src="/pexels-erik-schereder-10081060.jpg" alt="imagem 3">
+                        </div>
+                        <div class="slide">
+                            <img src="/pexels-stijn-dijkstra-13008665.jpg" alt="imagem 4">
+                        </div>
+
+                    </div>
+
+                    <!-- Navegacao auto -->
+
+                    <div class="navegacao">
+                        <div class="auto-btn1"></div>
+                        <div class="auto-btn2"></div>
+                        <div class="auto-btn3"></div>
+                        <div class="auto-btn4"></div>
+                    </div>
+                </div>
+
+                <div class="manual-navegacao">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                </div>
+
             </div>
+
         </main>
     </section>
     <div class="space-transition"></div>
@@ -166,6 +203,7 @@
     <script src="mobile-navbar.js"></script>
     <script src="nav-effects.js"></script>
     <script src="main.js"></script>
+    <script src="projetos.js"></script>
 
 
 </body>
