@@ -7,11 +7,13 @@
     }
 
     body {
+        position: relative;
         overflow-x: hidden;
     }
 
     .lista{
         display: flex;
+        overflow: hidden;
     }
 
 
@@ -20,7 +22,7 @@
         top: 8vh;
         right: 0;
         width: 100vw;
-        height: 100%;
+        height: 100vh;
         background: #23232e;
         flex-direction: column;
         align-items: center;
@@ -32,10 +34,18 @@
     .nav-list li {
         margin-left: 0;
         opacity: 1;
+        letter-spacing: 3px;
     }
 
     .mobile-menu {
         display: block;
+    }
+
+    .mobile-menu div {
+        width: 32px;
+        height: 2px;
+        background-color: #fff;
+        margin: 8px;
     }
     
     /*Viewport Home*/
