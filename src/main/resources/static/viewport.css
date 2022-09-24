@@ -10,6 +10,11 @@
         overflow-x: hidden;
     }
 
+    .lista{
+        display: flex;
+    }
+
+
     .nav-list {
         position: absolute;
         top: 8vh;
@@ -35,30 +40,34 @@
     
     /*Viewport Home*/
     
-    
-    .img-home{
-            
-    }
 
     .container-home{
         display: grid;
+        width: 99vw;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 1fr; 
     }
 
     .container-sobre{
         display: grid;
+        width: 99vw;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows:1fr;
         row-gap: 5px;
     }
 
-   div .img-sobre{
-        margin-top: 0;
+    .container-sobre h4{
+        font-size: 15px;
     }
 
-    .container-projetos div:hover{
-        background-size: 300px;
+    .container-projetos{
+        width: 99vw;
+    }
+
+    .container-contato{
+        width: 99vw;
+        height: 90vh;
+
     }
     
 }
