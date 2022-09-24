@@ -36,10 +36,11 @@ public class ContatoController {
         return mv;
     }
 
-    @PostMapping("/enviarEmail")
-    public ResponseEntity<ContatoModel> enviandoEmail(@RequestBody @Valid ContatoDTO contatoDTO) {
-        ContatoModel contatoModel = new ContatoModel();
-        return new ResponseEntity<>(contatoModel, HttpStatus.CREATED);
-    }
+    // @PostMapping("/enviarEmail")
+    // public ResponseEntity<ContatoModel> enviandoEmail(@RequestBody @Valid
+    // ContatoDTO contatoDTO) {
+    // ContatoModel contatoModel = new ContatoModel();
+    // return new ResponseEntity<>(contatoModel, HttpStatus.CREATED);
+    // }
 
 }

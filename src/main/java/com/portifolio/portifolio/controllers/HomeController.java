@@ -26,18 +26,4 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/ola")
-    public ModelAndView firstPage() {
-        return new ModelAndView("cliente");
-    }
-
-    @RequestMapping("/user")
-    public ModelAndView acesso() {
-        return new ModelAndView("user");
-    }
-
-    @RequestMapping("/registre")
-    public ModelAndView registro() {
-        return new ModelAndView("registre");
-    }
 }

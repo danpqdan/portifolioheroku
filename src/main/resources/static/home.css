@@ -22,14 +22,12 @@
     }
 
     .title-div{
-        font-size: 20px;
+        font-family: 'Abel', sans-serif;
+        font-size: 40px;
         color: white;
         margin: auto;
-        margin-top: 10px;
-        border-radius: 10px;
-        border: 1px solid white;
-        padding: 5px 10px;
         width: max-content;
+        overflow-y: hidden;
         
     }
 
@@ -41,6 +39,15 @@
         text-align: justify;
         justify-content: center;
         color: aliceblue;
+    }
+
+    .conteudo-home h4{
+        margin-top: 40px;
+    }
+
+    h4{
+        overflow-y: hidden;
+        font-family: 'Abel', sans-serif;
     }
 
     /* Conteudo Sobre */
@@ -60,15 +67,15 @@
         height: 92vh;
         width: 80vw;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         box-shadow: rgb(104, 104, 104) 1px 1px 20px;
 
     }
 
-    .img-sobre{
+    /* .img-sobre{
         background: url(h1daniel.gif) no-repeat center center;
         margin-top: 45%;
-    }
+    } */
 
     .conteudo-sobre{
         text-align: justify;

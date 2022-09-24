@@ -21,6 +21,7 @@
     height: 92vh;
     width: 80vw;
     box-shadow: rgb(104, 104, 104) 1px 1px 20px;
+    overflow-y: hidden;
 }
 
 
@@ -28,9 +29,9 @@
     max-width: 500px;
     margin: 60px auto;
     position: relative;
-    border: 1px white solid;
-    border-radius: 20px;
-    box-shadow: rgb(104, 104, 104) 1px 1px 20px;
+    font-family: 'Abel', sans-serif;
+    overflow-y: hidden;
+
 }
 
 @media (max-width: 999px) {
@@ -46,7 +47,8 @@
 #contact input[type="tel"],
 #contact input[type="url"],
 #contact textarea #contact input[type="submit"] {
-    font: 400 12px "Roboto", Helvica, Arial, sans-serif;
+    font-family: 'Abel', sans-serif;
+
 }
 
 fieldset {
