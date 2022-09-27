@@ -96,6 +96,7 @@
     }
 
     .navegacao div{
+        display: none;
         border: 2px solid #1d1e1f;
         padding: 5px;
         border-radius: 10px;
@@ -130,3 +131,4 @@
     #radio4:checked ~ .navegacao .auto-btn4{
         background-color: #fff;
     } 
+
