@@ -14,10 +14,10 @@ export function Heading({ size = "md", children, asChild , className}: HeadingPr
 
   return (
     <Comp
-      className={clsx("", {
-        "text-lg": size === "sm",
-        "text-xl": size === "md",
-        "text-2xl": size === "lg",
+      className={clsx("hd-md", {
+        "text-hd-lg": size === "sm",
+        "text-hd-md": size === "md",
+        "text-hd-sm": size === "lg",
       },
       className
       )}
