@@ -1,10 +1,14 @@
 import { Display } from "../componentes/Display";
 import { Heading } from "../componentes/Heading";
 import { BiArrowToLeft, BiArrowToRight } from "react-icons/bi";
+import React, { useState } from "react";
+
 
 import Perfil from "../assets/1664094305021.jpeg";
+import { TransicaoImagem } from "../hooks/TransicaoImagem";
 
 export function Sobre() {
+  const [slide, setSlide] = useState(false);
   return (
     <div className="flex ml-3 mr-3 justify-center">
       <Display className="h-ds-session w-ds-session bg-black mr-2 ">
@@ -21,10 +25,10 @@ export function Sobre() {
             Desenvolvedor Web
           </Heading>
         </div>
-        <div className="flex justify-center items-center">
-          <BiArrowToLeft color="white" size={50} cursor={"pointer"} className={"fill-pink-900 hover:animate-ping"}/>
-          <Display className="h-ds-sm w-ds-sm bg-blue-900 mx-4">Teste</Display>
-          <BiArrowToRight color="white" size={50} cursor={"pointer"} className={"fill-pink-900 hover:animate-ping"}/>
+        <div className="flex justify-center items-center gap-2">
+          
+          <TransicaoImagem />
+
         </div>
       </Display>
     </div>

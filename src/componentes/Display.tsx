@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { ReactNode } from "react";
 
 export interface DisplayProps {
-  size?: "sm" | "md" | "lg" | "xl" | "session" | "aside"| "pic";
+  size?: "sm" | "md" | "lg" | "xl" | "session" | "aside"| "pic" | "";
   children: ReactNode;
   asChild?: boolean;
   className?: string
@@ -22,6 +22,7 @@ export function Display({ size = "sm", children, asChild , className}: DisplayPr
         "ds-session": size === "session",
         "ds-aside": size === "aside",
         "ds-pic": size === "pic",
+        "": size === "",
 
 
       },
