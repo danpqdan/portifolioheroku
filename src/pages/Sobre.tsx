@@ -25,7 +25,7 @@ export function Sobre() {
             Desenvolvedor Web
           </Heading>
         </div>
-        <div className="flex justify-center items-center gap-2">
+        <div className="flex justify-center items-center ">
           
           <TransicaoImagem />
 
