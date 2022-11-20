@@ -29,7 +29,7 @@ module.exports = {
       'ds-lg': 232,
       'ds-md': 179,
       'ds-sm': 250,
-      'ds-pic':79
+      'ds-pic':98
     },
 
     width: {
@@ -40,7 +40,7 @@ module.exports = {
       'ds-lg': 262,
       'ds-md': 328,
       'ds-sm': 241,
-      'ds-pic': 122,
+      'ds-pic': 143,
     },
 
     extend: {

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-import { Slot } from "@radix-ui/react-slot";
-import { clsx } from "clsx";
+import React, {
+  Children,
+  HTMLAttributes,
+  JSXElementConstructor,
+  ReactComponentElement,
+  ReactElement,
+  ReactPortal,
+  useState,
+} from "react";
 import { ReactNode } from "react";
 import { useSpring, a } from "@react-spring/web";
-import { Display } from "./Display";
-
-import Carousel from "react-elastic-carousel";
+import { FaBeer } from "react-icons/fa";
+import clsx from "clsx";
 
 export interface CardRootProps {
   children: ReactNode;
@@ -13,100 +18,84 @@ export interface CardRootProps {
 }
 
 function CardRoot(props: CardRootProps) {
-  return (
-    <nav className="overflow-hidden flex items-center justify-center h-ds-md w-ds-md relative">
-      {props.children}
-    </nav>
-  );
+  return <div>{props.children}</div>;
 }
 
 export interface CardIconProps {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 
 function CardIcon(props: CardIconProps) {
-  return (
-    <slot className="flex justify-center items-center">{props.children}</slot>
-  );
+  return <div className="absolute h-ds-md w-ds-md bg-blue-500 rounded">{props.children}</div>;
 }
 
-export interface CardContentProps {
-  children: ReactNode;
-  className: string;
-  asChild: string;
+export interface CardTextProps {
+  className?: string;
+  children?: ReactNode;
 }
 
-function CardContent(props: CardContentProps) {
+function CardText(props: CardTextProps) {
+  return <div className="h-ds-md w-ds-md bg-pink-900 rounded  text-lx-md">{props.children}</div>;
+}
+
+export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {
+  text?: CardTextProps;
+}
+
+function CardContent(props: CardTextProps) {
   const [flipped, set] = useState(false);
-
   const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
     config: { mass: 5, tension: 500, friction: 80 },
   });
-  const [items, setItems] = useState([1, 2, 3, 4, 5, 6, 7, 8]);
-
   return (
-    <Display className="w-ds-sm h-ds-md justify-center items-center">
-      {items.map((item) => (
-        <div
-          onClick={() => set((state) => !state)}
-          className="cursor-pointer w-ds-md h-ds-md flex items-center justify-center"
-          key={item}
-        >
-          <CardRoot>
-            <a.div
-              style={{
-                opacity: opacity.to((o) => 1 - o),
-                transform,
-              }}
-              className=""
-            >
-              <h1 className="w-ds-md h-ds-md flex justify-center items-center bg-blue-500">
-                <Card.Icon children={props.children} />
-              </h1>
-            </a.div>
-          </CardRoot>
-          <CardRoot children={}>
-            <a.div
-              style={{
-                opacity,
-                transform,
-                rotateX: "180deg",
-              }}
-              className=""
-            >
-              <h1 className="w-ds-md h-ds-md flex justify-center items-center bg-pink-900"></h1>
-            </a.div>
-          </CardRoot>
-        </div>
-      ))}
-    </Display>
+    <div onClick={() => set((state) => !state)} className="cursor-pointer">
+      <a.div
+        style={{
+          opacity: opacity.to((o) => 1 - o),
+          transform,
+        }}
+        className="absolute h-ds-md w-ds-md bg-blue-500 text-hd-sm rounded"
+      >
+        <Card.Icon {...props} />
+      </a.div>
+      <a.div
+        style={{
+          opacity,
+          transform,
+          rotateX: "180deg",
+        }}
+        className=""
+      >
+        <Card.Text {...props} />
+      </a.div>
+    </div>
   );
 }
 
-export interface CardTransitionProps {
+export interface CardTransitionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
   className?: string;
+  breackPoints?: EventListenerObject;
 }
 
 function CardTransition(props: CardTransitionProps) {
   const breakPoint = [
-    { width: "w-ds-sm", itemToShow: 1 },
-    { width: "w-ds-sm", itemToShow: 2, itemToScroll: 2 },
-    { width: "w-ds-sm", itemToShow: 3 },
-    { itemToShow: 4 },
+    { width: "w-ds-sm", itemPosition: 1 },
+    { width: "w-ds-sm", itemPosition: 2 },
+    { width: "w-ds-sm", itemPosition: 3 },
+    { itemPosition: 4 },
   ];
 
   return (
-    <Carousel
-      isRTL
+    <nav
       breakPoints={breakPoint}
       className="w-ds-md h-ds-md flex justify-center"
     >
       {props.children}
-    </Carousel>
+    </nav>
   );
 }
 
@@ -115,4 +104,5 @@ export const Card = {
   Icon: CardIcon,
   Card: CardTransition,
   Content: CardContent,
+  Text: CardText,
 };
